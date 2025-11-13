@@ -1,45 +1,4 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
-
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-
-contract DecentraDocs is Ownable, ReentrancyGuard {
-    struct Document {
-        string documentHash;
-        address creator;
-        uint256 createdAt;
-        bool isActive;
-        address[] requiredSigners;
-        mapping(address => bool) signatures;
-        uint256 signatureCount;
-        bool isCompleted;
-    }
-
-    
-    struct DocumentView {
-        string documentHash;
-        address creator;
-        uint256 createdAt;
-        bool isActive;
-        address[] requiredSigners;
-        uint256 signatureCount;
-        bool isCompleted;
-    }
-    
-    mapping(uint256 => Document) public documents;
-    mapping(address => uint256[]) public userDocuments;
-    mapping(address => uint256[]) public signerDocuments;
-    
-    uint256 public documentCounter;
-    uint256 public storageFee = 0.001 ether;
-    
-    event DocumentCreated(uint256 indexed documentId, address indexed creator, string documentHash);
-    event DocumentSigned(uint256 indexed documentId, address indexed signer);
-    event DocumentCompleted(uint256 indexed documentId);
-    event DocumentRevoked(uint256 indexed documentId);
-
-    // ✅ Constructor now initializes Ownable with msg.sender
+? Constructor now initializes Ownable with msg.sender
 
 
     constructor() Ownable(msg.sender) {}
@@ -145,3 +104,6 @@ contract DecentraDocs is Ownable, ReentrancyGuard {
         payable(owner()).transfer(address(this).balance);
     }
 }
+// 
+End
+// 
