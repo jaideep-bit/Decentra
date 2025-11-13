@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DecentraDocs</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📜 DecentraDocs</h1>
+    <button id="connectButton">Connect Wallet</button>
+    <p id="walletAddress">Not Connected</p>
+
+    <div class="card">
+      <h2>Create Document</h2>
+      <input type="text" id="docHash" placeholder="Enter document hash" />
+      <button id="createDocBtn">Create Document</button>
+    </div>
+
+    <div class="card">
+      <h2>Check Document Status</h2>
+      <input type="text" id="checkHash" placeholder="Enter document hash" />
+      <button id="checkDocBtn">Check Status</button>
+      <p id="docStatus"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
