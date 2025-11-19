@@ -1,6 +1,7 @@
 ? Constructor now initializes Ownable with msg.sender
 
 
+
     constructor() Ownable(msg.sender) {}
 
     function createDocument(
